@@ -11,11 +11,13 @@ const Root = styled.div`
 
 const Layout = ({ nav, children }) => {
   return (
-    <Root>
+    <>
       <GlobalStyle />
-      {nav && <Navbar />}
-      <main>{children}</main>
-    </Root>
+      <Root>
+        {nav && <Navbar />}
+        <main>{children}</main>
+      </Root>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import ReactMarkdown from "react-markdown"
 import { theme } from "../../styles/index"
 const { colors, fontSizes } = theme
 
@@ -18,7 +19,7 @@ const StyledLink = styled(Link)`
 const Tile = styled.div`
   /* width: 300px; */
   padding-bottom: 1rem;
-  max-height: 500px;
+  max-height: 490px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,6 +60,8 @@ const StyledContent = styled.div`
       font-size: ${fontSizes.l2};
     }
     :nth-child(2) {
+      padding: 0 10px;
+      text-align: justify;
       margin-top: 1rem;
       color: grey;
       font-weight: 500;
@@ -78,7 +81,19 @@ const Mosaic = ({ articles }) => {
             </ImgContainer>
             <StyledContent>
               <div>{article.title}</div>
-              <div>{`${article.content.substr(0, 250)}.....`}</div>
+              <div>
+                <ReactMarkdown
+                  source={article.content}
+                  disallowedTypes={[
+                    "image",
+                    "link",
+                    "linkReference",
+                    "imageReference",
+                  ]}
+                  escapeHtml={false}
+                />
+              </div>
+              {/* <div>{`${article.content.substr(0, 250)}.....`}</div> */}
             </StyledContent>
           </Tile>
         </StyledLink>
