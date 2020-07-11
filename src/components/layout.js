@@ -9,11 +9,11 @@ const Root = styled.div`
   min-height: 100vh;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ nav, children }) => {
   return (
     <Root>
       <GlobalStyle />
-      <Navbar />
+      {nav && <Navbar />}
       <main>{children}</main>
     </Root>
   )

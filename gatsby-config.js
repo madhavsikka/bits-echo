@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const config = require("gatsby-plugin-config")
+
 module.exports = {
   siteMetadata: {
     title: `BITS ECHO`,
@@ -29,7 +35,14 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {},
+    },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://localhost:1337",
+        contentTypes: ["echo", "article", "user"],
+        queryLimit: 1000,
+      },
     },
   ],
 }

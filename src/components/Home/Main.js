@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { IoMdArrowRoundForward } from "react-icons/io"
-import { ClockTower, BITSLogo } from "../../images/index"
+import { ClockTower } from "../../images/index"
 import { theme } from "../../styles/index"
 const { colors, fontSizes } = theme
 
@@ -14,36 +14,36 @@ const MainContainer = styled.div`
   background: ${colors.green};
 `
 
-const Bookmark = styled.div`
-  position: absolute;
-  top: 0;
-  left: 5rem;
-  width: 0;
-  height: 140px;
-  border-right: 40px solid ${colors.white};
-  border-left: 40px solid ${colors.white};
-  border-bottom: 20px solid transparent;
-`
+// const Bookmark = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 5rem;
+//   width: 0;
+//   height: 140px;
+//   border-right: 40px solid ${colors.white};
+//   border-left: 40px solid ${colors.white};
+//   border-bottom: 20px solid transparent;
+// `
 
-const LogoContainer = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  top: 0.6rem;
-  left: 5.65rem;
-  img {
-    width: 60px;
-    margin-bottom: 7px;
-  }
-  p {
-    font-weight: 600;
-    margin: 0;
-    color: ${colors.green};
-    font-size: ${fontSizes.l2};
-  }
-`
+// const LogoContainer = styled.div`
+//   position: absolute;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: center;
+//   top: 0.6rem;
+//   left: 5.65rem;
+//   img {
+//     width: 60px;
+//     margin-bottom: 7px;
+//   }
+//   p {
+//     font-weight: 600;
+//     margin: 0;
+//     color: ${colors.green};
+//     font-size: ${fontSizes.l2};
+//   }
+// `
 
 const ContentContainer = styled.div`
   display: flex;
@@ -115,12 +115,12 @@ const StyledButton = styled.button`
 const Main = () => {
   return (
     <MainContainer>
-      <Bookmark />
+      {/* <Bookmark />
       <LogoContainer>
         <img src={BITSLogo} alt="Logo" />
         <p>BITS</p>
         <p>Pilani</p>
-      </LogoContainer>
+      </LogoContainer> */}
       <ContentContainer>
         <TitleContainer>
           <p>BITS</p>
