@@ -34,7 +34,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: process.env.DEPLOY_URL
-          ? process.env.DEPLOY_URL
+          ? "https://bits-echo.herokuapp.com"
           : "http://localhost:1337",
         contentTypes: ["echo", "article", "user"],
         queryLimit: 1000,
