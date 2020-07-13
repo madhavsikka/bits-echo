@@ -17,7 +17,7 @@ const StyledBanner = styled.div`
   font-size: ${fontSizes.l7};
   color: ${colors.yellow};
   font-weight: 600;
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   div {

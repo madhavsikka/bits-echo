@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { theme } from "../../styles/index"
-const { colors, fontSizes } = theme
+const { colors } = theme
 
 const StyledGrid = styled.div`
   display: grid;
@@ -14,14 +14,17 @@ const StyledGrid = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  margin-bottom: 1rem;
 `
 
 const Tile = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
   transition: all 100ms;
+  box-shadow: 0 0 5px lightgray;
   :hover {
     box-shadow: 0 5px 8px lightgray;
     transform: translateY(-3px);
@@ -43,36 +46,39 @@ const StyledContent = styled.div`
   padding: 1rem;
   overflow: hidden;
   div {
-    :nth-child(1) {
-      text-align: center;
-      color: ${colors.green};
-      font-weight: 600;
-      font-size: 17px;
-    }
-    :nth-child(2) {
-      padding: 0 10px;
-      text-align: justify;
-      margin-top: 1rem;
-      color: grey;
-      font-weight: 500;
-      font-size: ${fontSizes.l1};
-      line-height: 1.5;
-    }
+    text-align: center;
+    color: ${colors.green};
+    font-weight: 600;
+    font-size: 17px;
   }
+`
+
+const StyledType = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${colors.green};
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: ${colors.white};
+  font-weight: 600;
+  height: 30px;
+  text-transform: capitalize;
 `
 
 const Mosaic = ({ articles }) => {
   return (
     <StyledGrid>
       {articles.map(article => (
-        <Tile type={article.type}>
-          <StyledLink to={`Article_${article.id}`} key={article.id}>
+        <StyledLink to={`Article_${article.id}`} key={article.id}>
+          <Tile type={article.type}>
             <StyledImg fluid={article.cover.childImageSharp.fluid} alt="" />
             <StyledContent>
               <div>{article.title}</div>
             </StyledContent>
-          </StyledLink>
-        </Tile>
+            <StyledType>{article.type.replace(/_/g, " ")}</StyledType>
+          </Tile>
+        </StyledLink>
       ))}
     </StyledGrid>
   )

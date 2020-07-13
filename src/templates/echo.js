@@ -20,11 +20,12 @@ const StyledBanner = styled.div`
   background: ${colors.green};
   div {
     :nth-child(1) {
+      padding: 1rem;
       text-align: center;
       color: ${colors.yellow};
-      font-weight: 600;
+      font-weight: 700;
       font-size: ${fontSizes.l8};
-      margin: 2rem 0 0;
+      margin: 1rem 0 0;
     }
     :nth-child(2) {
       display: flex;
