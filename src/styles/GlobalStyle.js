@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import TransitionStyles from "./TransitionStyles"
 import theme from "./theme"
 // import media from "./media"
-const { fontSizes } = theme
+const { colors } = theme
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -26,24 +26,31 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .contentClass {
-    width: 900px;
-    font-size: ${fontSizes.l2};
+    width: 1200px;
+    font-size: 17px;
     text-align: justify;
     line-height: 2rem;
-    img:nth-child(2n+1) {
-      width: 400px;
+    column-count: 2;
+    column-gap: 3rem;
+    column-width: 500px;
+    column-rule: 1px solid ${colors.green};
+    img {
+      width: auto;
       float: left;
-      margin: 0 1rem 0 0;
-    }
-    img:nth-child(2n+2) {
-      width: 400px;
-      float: right;
-      margin: 0;
+      max-width: 400px;
+      max-height: 300px;
+      margin: 5px 1rem 5px 0;
+      border-radius: 5px;
     }
   }
 
+  .previewContent {
+    font-size: 15px !important;
+    color: grey !important;
+    font-weight: 400 !important;
+  }
+
   ${TransitionStyles}
-  
 `
 
 export default GlobalStyle

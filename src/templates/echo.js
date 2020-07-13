@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { BackIcon, StyledLink } from "../styles/shared"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import { Mosaic } from "../components/Archive/index"
+import { Mosaic, Sharebar } from "../components/Archive/index"
 import { theme } from "../styles/index"
 const { colors, fontSizes } = theme
 
@@ -20,23 +20,20 @@ const StyledBanner = styled.div`
   background: ${colors.green};
   div {
     :nth-child(1) {
-      color: ${colors.white};
-      font-size: ${fontSizes.l7};
-      font-weight: 300;
-      margin: 1rem 0;
-    }
-    :nth-child(2) {
       text-align: center;
       color: ${colors.yellow};
       font-weight: 600;
       font-size: ${fontSizes.l8};
-      margin: 1rem 0;
+      margin: 2rem 0 0;
     }
-    :nth-child(3) {
+    :nth-child(2) {
       display: flex;
       width: 400px;
       justify-content: space-between;
-      margin: 1rem 0;
+      margin: 2rem 0 1rem;
+    }
+    :nth-child(3) {
+      margin: 0 0 1rem;
     }
   }
 `
@@ -45,7 +42,7 @@ const Label = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 110px;
   height: 25px;
   border-radius: 5px;
   background: ${colors.white};
@@ -61,13 +58,13 @@ const EchoTemplate = ({ data }) => {
         <BackIcon />
       </StyledLink>
       <StyledBanner>
-        <div>BITS Echo</div>
         <div>{data.strapiEcho.title}</div>
         <div>
           <Label>{`Volume ${data.strapiEcho.volume}`}</Label>
           <Label>{`${data.strapiEcho.date}`}</Label>
           <Label>{`Issue ${data.strapiEcho.issue}`}</Label>
         </div>
+        <Sharebar title={data.strapiEcho.title} />
       </StyledBanner>
       <StyledContainer>
         <Mosaic articles={data.strapiEcho.articles} />
@@ -88,12 +85,12 @@ export const query = graphql`
       articles {
         id
         title
-        category
+        type
         content
         cover {
           childImageSharp {
-            fixed(height: 270) {
-              ...GatsbyImageSharpFixed
+            fluid(maxHeight: 300) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

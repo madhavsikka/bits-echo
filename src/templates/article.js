@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import ReactMarkdown from "react-markdown"
 import { BackIcon, StyledLink } from "../styles/shared"
+import { Sharebar } from "../components/Archive/index"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { theme } from "../styles/index"
@@ -17,13 +18,37 @@ const StyledBanner = styled.div`
   color: ${colors.yellow};
   font-weight: 600;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  div {
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: ${colors.white};
+  }
+  svg {
+    transition: all 100ms;
+    :hover {
+      transform: scale(1.2);
+    }
+  }
 `
 
 const ContentContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 1rem;
+  blockquote {
+    display: block;
+    background: ${colors.clearGreen};
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0;
+    font-style: italic;
+    border-left: 7px solid ${colors.green};
+  }
 `
 
 const ArticleTemplate = ({ data }) => {
@@ -32,7 +57,10 @@ const ArticleTemplate = ({ data }) => {
       <StyledLink to="../">
         <BackIcon />
       </StyledLink>
-      <StyledBanner>{data.strapiArticle.title}</StyledBanner>
+      <StyledBanner>
+        <p>{data.strapiArticle.title}</p>
+        <Sharebar title={data.strapiArticle.title} />
+      </StyledBanner>
       <ContentContainer>
         <ReactMarkdown
           source={data.strapiArticle.content}
@@ -53,7 +81,7 @@ export const query = graphql`
   query ArticleTemplate($id: String!) {
     strapiArticle(id: { eq: $id }) {
       title
-      category
+      type
       content
     }
   }
