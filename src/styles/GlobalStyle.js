@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import TransitionStyles from "./TransitionStyles"
-import theme from "./theme"
+import { theme, media } from "./index"
 const { colors } = theme
 
 const GlobalStyle = createGlobalStyle`
@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     column-count: 2;
     column-gap: 3rem;
     column-width: 500px;
+    padding: 0 5px;
     column-rule: 1px solid ${colors.green};
     img {
       width: auto;
@@ -40,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
       max-height: 300px;
       margin: 5px 1rem 5px 0;
       border-radius: 5px;
+      ${media.phablet`float: none; display: block; margin: 0 auto;`};
     }
   }
 
