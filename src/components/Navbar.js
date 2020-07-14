@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { BITSLogo } from "../images/index"
 import { Link } from "gatsby"
-import { theme } from "../styles/index"
+import { theme, media } from "../styles/index"
 const { colors, fontSizes } = theme
 
 const StyledNav = styled.nav`
@@ -16,6 +16,12 @@ const StyledNav = styled.nav`
   font-weight: 600;
   height: 110px;
   padding: 2.5rem 5rem 2.5rem 11rem;
+
+  ${media.thone`padding: 2.5rem 2rem 2.5rem 6.7rem;`};
+  ${media.phablet`font-size: ${fontSizes.l3};`};
+  ${media.phone`padding: 2.5rem 1rem 2.5rem 5.3rem; font-size: 16px;`};
+  ${media.tiny`font-size: 14px;`};
+
   user-select: none;
   div {
     display: flex;
@@ -46,6 +52,9 @@ const Bookmark = styled.div`
   border-right: 40px solid ${colors.white};
   border-left: 40px solid ${colors.white};
   border-bottom: 20px solid transparent;
+
+  ${media.thone`left: 1rem;`};
+  ${media.phone`height: 120px; border-right-width: 30px; border-left-width: 30px;`};
 `
 
 const LogoContainer = styled.div`
@@ -56,15 +65,19 @@ const LogoContainer = styled.div`
   align-items: center !important;
   top: 0.6rem;
   left: 5.656rem;
+  ${media.thone`left: 1.656rem;`};
+  ${media.phone`left: 1.5rem;`};
   img {
     width: 60px;
     margin-bottom: 7px;
+    ${media.phone`width: 45px;`};
   }
   p {
     font-weight: 600;
     margin: 0;
     color: ${colors.green};
     font-size: ${fontSizes.l2};
+    ${media.phone`font-size: 14px;`};
   }
 `
 

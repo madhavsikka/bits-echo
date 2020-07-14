@@ -15,7 +15,7 @@ const theme = {
     l6: "32px",
     l7: "40px",
     l8: "50px",
-    l9: "120px",
+    l9: "140px",
     l10: "180px",
   },
   easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",

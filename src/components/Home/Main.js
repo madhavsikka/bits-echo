@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { IoMdArrowRoundForward } from "react-icons/io"
 import { ClockTower } from "../../images/index"
-import { theme } from "../../styles/index"
+import { theme, media } from "../../styles/index"
 const { colors, fontSizes } = theme
 
 const MainContainer = styled.div`
@@ -10,40 +10,12 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: calc(100vh - 110px);
-  padding: 0 4rem;
+  padding: 0 3rem;
   background: ${colors.green};
+
+  ${media.desktop`justify-content: center;`};
+  ${media.thone`padding: 0;`};
 `
-
-// const Bookmark = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 5rem;
-//   width: 0;
-//   height: 140px;
-//   border-right: 40px solid ${colors.white};
-//   border-left: 40px solid ${colors.white};
-//   border-bottom: 20px solid transparent;
-// `
-
-// const LogoContainer = styled.div`
-//   position: absolute;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   align-items: center;
-//   top: 0.6rem;
-//   left: 5.65rem;
-//   img {
-//     width: 60px;
-//     margin-bottom: 7px;
-//   }
-//   p {
-//     font-weight: 600;
-//     margin: 0;
-//     color: ${colors.green};
-//     font-size: ${fontSizes.l2};
-//   }
-// `
 
 const ContentContainer = styled.div`
   display: flex;
@@ -51,6 +23,7 @@ const ContentContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   margin-top: 2rem;
+  ${media.desktop`align-items: center;`};
 `
 const TitleContainer = styled.div`
   display: flex;
@@ -58,6 +31,8 @@ const TitleContainer = styled.div`
   justify-content: flex-start;
   color: ${colors.white};
   padding: 5rem 0;
+  ${media.desktop`padding: 1rem;`};
+  ${media.tiny`padding: 0rem;`};
 
   p {
     font-weight: 800;
@@ -65,6 +40,13 @@ const TitleContainer = styled.div`
     user-select: none;
     margin: 0;
     line-height: 165px;
+
+    ${media.desktop`text-align: center;`};
+    ${media.thone`font-size: ${fontSizes.l9};line-height: 135px;`};
+    ${media.phablet`font-size: 120px;line-height: 115px;`};
+    ${media.phone`font-size: 100px;line-height: 100px;`};
+    ${media.tiny`font-size: 90px;line-height: 90px;`};
+
     :nth-child(2) {
       color: ${colors.yellow};
     }
@@ -73,8 +55,13 @@ const TitleContainer = styled.div`
       line-height: 30px;
       font-weight: 600;
       font-size: ${fontSizes.l4};
+      ${media.desktop`margin: 25px 0 45px;`};
+      ${media.phablet`font-size: 18px;line-height: 18px;`};
+      ${media.phone`font-size: 16px;line-height: 16px;`};
+      ${media.tiny`font-size: 14px;line-height: 14px;`};
     }
   }
+  ${media.desktop`justify-content: center;`};
 `
 
 const ClockTowerContainer = styled.div`
@@ -86,6 +73,7 @@ const ClockTowerContainer = styled.div`
     max-height: 100%;
     width: auto;
   }
+  ${media.desktop`display: none;`};
 `
 
 const StyledButton = styled.button`
@@ -102,6 +90,8 @@ const StyledButton = styled.button`
   font-size: ${fontSizes.l3};
   font-weight: 600;
   transition: all 100ms;
+  ${media.phone`font-size: 16px;`};
+  ${media.tiny`font-size: 14px;`};
   :active,
   :focus {
     outline: none;
@@ -115,12 +105,6 @@ const StyledButton = styled.button`
 const Main = () => {
   return (
     <MainContainer>
-      {/* <Bookmark />
-      <LogoContainer>
-        <img src={BITSLogo} alt="Logo" />
-        <p>BITS</p>
-        <p>Pilani</p>
-      </LogoContainer> */}
       <ContentContainer>
         <TitleContainer>
           <p>BITS</p>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { Card } from "../components/Archive/index"
-import { theme } from "../styles/index"
+import { theme, media } from "../styles/index"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 const { colors, fontSizes } = theme
@@ -18,14 +18,22 @@ const HeadingContainer = styled.div`
   font-weight: 600;
   p {
     margin: 3rem 0 0;
+    ${media.thone`font-size: 80px;`};
     :last-child {
       color: ${colors.white};
       font-weight: 300;
+      ${media.thone`font-size: 70px;`};
     }
+    ${media.deskTab`margin: 4rem 0 0;`};
+    ${media.thone`margin: 0; line-height: 75px;`};
   }
+  ${media.medDesktop`font-size: 120px`};
+  ${media.desktop`font-size: 100px`};
+  ${media.deskTab`font-size: 80px`};
+  ${media.tabhone`font-size: 70px`};
+  ${media.thone`flex-direction: column; justify-content: center; align-items: center;`};
 `
 const BodyContainer = styled.div`
-  /* margin-left: 300px; */
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, 320px);
