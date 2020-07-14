@@ -25,6 +25,7 @@ const Tile = styled.div`
   border-radius: 5px;
   transition: all 100ms;
   box-shadow: 0 0 5px lightgray;
+  min-height: 320px;
   :hover {
     box-shadow: 0 5px 8px lightgray;
     transform: translateY(-3px);

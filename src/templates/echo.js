@@ -4,7 +4,7 @@ import { BackIcon, StyledLink } from "../styles/shared"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { Mosaic, Sharebar } from "../components/Archive/index"
-import { theme } from "../styles/index"
+import { theme, media } from "../styles/index"
 const { colors, fontSizes } = theme
 
 const StyledContainer = styled.main`
@@ -17,6 +17,7 @@ const StyledBanner = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
+  padding: 0 3rem;
   background: ${colors.green};
   div {
     :nth-child(1) {
@@ -26,12 +27,17 @@ const StyledBanner = styled.div`
       font-weight: 700;
       font-size: ${fontSizes.l8};
       margin: 1rem 0 0;
+      ${media.medDesktop`font-size: 45px`};
+      ${media.tablet`font-size: 40px`};
+      ${media.thone`padding: 0`};
+      ${media.phablet`font-size: 34px;`};
     }
     :nth-child(2) {
       display: flex;
       width: 400px;
       justify-content: space-between;
       margin: 2rem 0 1rem;
+      ${media.phablet`width: 300px;`};
     }
     :nth-child(3) {
       margin: 0 0 1rem;
@@ -50,6 +56,7 @@ const Label = styled.p`
   color: ${colors.green};
   font-weight: 600;
   font-size: ${fontSizes.l1};
+  ${media.phablet`font-size: 12px; height: 20px; width: 90px;`};
 `
 
 const EchoTemplate = ({ data }) => {

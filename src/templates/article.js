@@ -5,33 +5,25 @@ import { BackIcon, StyledLink } from "../styles/shared"
 import { Sharebar } from "../components/Archive/index"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { theme } from "../styles/index"
+import { theme, media } from "../styles/index"
 const { colors, fontSizes } = theme
 
 const StyledBanner = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: ${colors.green};
-  font-size: ${fontSizes.l7};
-  color: ${colors.yellow};
-  font-weight: 600;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  div {
-    width: 350px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: ${colors.white};
-  }
-  svg {
-    transition: all 100ms;
-    :hover {
-      transform: scale(1.2);
-    }
+  min-height: 200px;
+  p {
+    margin: 2rem 0;
+    padding: 0 3rem;
+    color: ${colors.yellow};
+    font-size: ${fontSizes.l7};
+    text-align: center;
+    font-weight: 600;
+    ${media.tablet`font-size: 30px;`};
+    ${media.thone`font-size: 30px; margin: 1rem 0;`};
   }
 `
 

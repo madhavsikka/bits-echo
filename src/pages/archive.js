@@ -31,7 +31,7 @@ const HeadingContainer = styled.div`
   ${media.desktop`font-size: 100px`};
   ${media.deskTab`font-size: 80px`};
   ${media.tabhone`font-size: 70px`};
-  ${media.thone`flex-direction: column; justify-content: center; align-items: center;`};
+  ${media.thone`flex-direction: column; justify-content: center; align-items: center; padding-top: 3rem;`};
 `
 const BodyContainer = styled.div`
   padding: 3rem;
@@ -57,7 +57,7 @@ const Archive = ({ data }) => (
     <BodyContainer>
       {data.allStrapiEcho.edges.map(({ node }) => (
         <StyledLink key={node.id} to={`/echos/${node.id}`}>
-          <Card width="320px" height="400px" node={node} />
+          <Card width="320px" height="390px" node={node} />
         </StyledLink>
       ))}
     </BodyContainer>
@@ -75,8 +75,8 @@ export const query = graphql`
           issue
           cover {
             childImageSharp {
-              fixed(width: 320, height: 200) {
-                ...GatsbyImageSharpFixed
+              fluid(maxHeight: 300) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

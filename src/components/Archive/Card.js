@@ -48,11 +48,14 @@ const StyledTitle = styled.div`
   padding: 0.6rem;
 `
 
-// const StyledSubTitle = styled(StyledTitle)`
-//   width: 100%;
-//   flex-direction: row;
-//   justify-content: space-between;
-// `
+const StyledSubTitle = styled(StyledTitle)`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto auto 0;
+  background: ${colors.clearGreen};
+  font-size: 16px;
+`
 
 const StyledDate = styled.div`
   display: flex;
@@ -70,16 +73,13 @@ const StyledDate = styled.div`
 const Card = ({ width, height, node }) => {
   return (
     <StyledCard width={width} height={height}>
-      <StyledImg fixed={node.cover.childImageSharp.fixed} alt="" />
+      <StyledImg fluid={node.cover.childImageSharp.fluid} alt="" />
       <StyledContent>
-        {/* <StyledTitle>
-          BITS Echo
-          <StyledSubTitle>
-            <div>Volume</div>
-            <div>Issue</div>
-          </StyledSubTitle>
-        </StyledTitle> */}
         <StyledTitle>{node.title}</StyledTitle>
+        <StyledSubTitle>
+          <div>Volume {node.volume}</div>
+          <div>Issue {node.issue}</div>
+        </StyledSubTitle>
         <StyledDate>{node.date}</StyledDate>
       </StyledContent>
     </StyledCard>

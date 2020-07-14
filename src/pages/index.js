@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Main } from "../components/Home/index"
+import Main from "../components/Home/Main"
 
 const IndexPage = () => (
   <Layout nav>
