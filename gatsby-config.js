@@ -22,7 +22,7 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#5CBFBD`,
         theme_color: `#5CBFBD`,
         display: `minimal-ui`,
         icon: `src/images/BITS_Logo.png`,
