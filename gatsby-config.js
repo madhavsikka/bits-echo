@@ -41,5 +41,12 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `gray`,
+        showSpinner: true,
+      },
+    },
   ],
 }
