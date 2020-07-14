@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Navbar from "./Navbar"
 import { GlobalStyle } from "../styles/index"
+require("typeface-montserrat")
 
 const Root = styled.div`
   display: flex;

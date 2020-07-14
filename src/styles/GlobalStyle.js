@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import TransitionStyles from "./TransitionStyles"
 import theme from "./theme"
-// import media from "./media"
 const { colors } = theme
 
 const GlobalStyle = createGlobalStyle`

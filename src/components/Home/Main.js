@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { IoMdArrowRoundForward } from "react-icons/io"
 import { ClockTower } from "../../images/index"
+import { StyledLink } from "../../styles/shared"
 import { theme, media } from "../../styles/index"
 const { colors, fontSizes } = theme
 
@@ -111,17 +112,19 @@ const Main = () => {
           <p>ECHO</p>
           <p>The Official BITS Pilani Newsletter</p>
         </TitleContainer>
-        <StyledButton>
-          Read The Latest Issue
-          <IoMdArrowRoundForward
-            style={{
-              width: "25px",
-              height: "25px",
-              strokeWidth: "3px",
-              marginLeft: "15px",
-            }}
-          />
-        </StyledButton>
+        <StyledLink to="/archive">
+          <StyledButton>
+            Read The Latest Issue
+            <IoMdArrowRoundForward
+              style={{
+                width: "25px",
+                height: "25px",
+                strokeWidth: "3px",
+                marginLeft: "15px",
+              }}
+            />
+          </StyledButton>
+        </StyledLink>
       </ContentContainer>
       <ClockTowerContainer>
         <img src={ClockTower} alt="ClockTower" />
