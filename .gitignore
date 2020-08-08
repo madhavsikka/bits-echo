@@ -71,3 +71,7 @@ yarn-error.log
 package-lock.json
 # Local Netlify folder
 .netlify
+
+#Prettier
+.prettierignore
+.prettierrc
