@@ -8,9 +8,16 @@
   BITS Echo
 </h1>
 
-A Server Side Rendering Website to host BITS Pilani Alumni Newsletter - BITS Echo, built using GatsbyJS. Developed in collaboration with BITS Pilani Alumni Relations Division.
-[BITS Echo Website](https://bits-echo.netlify.app/)
+- A Website for the official BITS Pilani Alumni Newsletter - BITS Echo, built using GatsbyJS. Developed in collaboration with BITS Pilani Alumni Relations Division.
+- Website is accessible at: [BITS Echo Website](https://bits-echo.netlify.app/)
+- Tech Stack: GatsbyJS, StrapiCMS
 
-_Connected to Strapi CMS [CMS GitHub](https://github.com/madhavsikka/bits-echo-cms)._
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b9dca605-23f7-45ce-98ef-b7560accba2a/deploy-status)](https://app.netlify.com/sites/bits-echo/deploys)
+<kbd>
+<img src="./static/BITS%20Echo%201.png" width="100%">
+</kbd>
+<kbd>
+<img src="./static/BITS%20Echo%202.png" width="100%">
+</kbd>
+<kbd>
+<img src="./static/BITS%20Echo%203.png" width="100%">
+</kbd>
