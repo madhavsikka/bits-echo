@@ -12,12 +12,6 @@
 - Website is accessible at: [BITS Echo Website](https://bits-echo.netlify.app/)
 - Tech Stack: GatsbyJS, StrapiCMS
 
-<kbd>
-<img src="./static/BITS%20Echo%201.png" width="100%">
-</kbd>
-<kbd>
-<img src="./static/BITS%20Echo%202.png" width="100%">
-</kbd>
-<kbd>
-<img src="./static/BITS%20Echo%203.png" width="100%">
-</kbd>
+<img src="./static/Echo%201.png" width="100%">
+<img src="./static/Echo%202.png" width="100%">
+<img src="./static/Echo%203.png" width="100%">
